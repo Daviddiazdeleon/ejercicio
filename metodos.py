@@ -13,9 +13,26 @@ class Producto:
                                   self.marca
                                   )
 
+
     def __getitem__(self, key):
         return self.nombre[key]
 
+
+def compara( x, y ) :
+
+    if self.Name < other.Name :
+      rst = -1
+    elif self.Name > other.Name :
+      rst = 1
+    else :
+      rst = 0
+
+    return rst
+
+prod = [auto, compu, cel]
+prodnom = prod.sort( compara )
+
+print prodnom
 
 
 auto = Producto('f500', 10000, 'rojo', 'ferrari')
