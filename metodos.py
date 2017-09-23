@@ -1,21 +1,26 @@
-import Producto
+class Producto:
+    def __init__(self, nombre, precio, color, marca):
+        self.nombre = nombre
+        self.precio = precio
+        self.color = color
+        self.marca = marca
 
-auto = Producto()
-auto.nombre = "f500"
-auto.precio = 10000000
-auto.color = "rojo"
-auto.marca = "ferrari"
+    def __repr__(self):
+        return '{}: {} {} {} {}'.format(self.__class__.__name__,
+                                  self.nombre,
+                                  self.precio,
+                                  self.color,
+                                  self.marca
+                                  )
 
-compu = Producto()
-compu.nombre = "v1000"
-compu.precio = 15000
-compu.color = "negra"
-compu.marca = "dell"
-
-cel = Producto()
-cel.nombre = "mate 8"
-cel.precio = 8000
-cel.color = "blanco"
-cel.marca = "huawei"
+    def __getitem__(self, key):
+        return self.nombre[key]
 
 
+
+auto = Producto('f500', 10000, 'rojo', 'ferrari')
+compu = Producto('v1000', 1500 , 'negra', 'dell')
+cel = Producto ('mate 8', 1900 , 'blanco', 'huawey')
+auto2 = Producto ('ford', 12000 , 'plata', 'fiest')
+objetos = (auto, compu, cel, auto2)
+print sorted(objetos, key=lambda producto: producto[2])
