@@ -6,5 +6,7 @@ cel = Producto ('mate 8', 1900 , 'blanco', 'huawey')
 auto2 = Producto ('ford', 12000 , 'plata', 'fiest')
 objetos = (auto, compu, cel, auto2)
 
-print sorted(objetos, key=lambda producto: producto.nombre)
-print sorted(objetos, key=lambda producto: producto.precio)
+producto = Producto("", "", "", "")
+
+print producto.por_nombre(objetos)
+print producto.por_precio(objetos)
